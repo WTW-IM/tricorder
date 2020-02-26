@@ -12,19 +12,24 @@ table, th, td {
         <tbody>
             @for (int i = 0; i < 42; i++)
             {
-                DateTime date = DateTime.Today.AddDays(i);
+                DateTime date = DateTime.Today.AddDays(-14 + i);
                 if (i % 7 == 0)
                 {
                     @:</tr><tr> 
                 }
                 
-                if (i == 0)
+                if (i == 14)
                 {
-                    <td>@date.Day Today</td>
+                    <td style="border: 5px solid purple;"><pre>
+                    Today
+                    @date.Day
+                    Num Changes: 0</pre></td>
                 }
                 else
                 {
-                    <td>@date.Day</td>
+                    <td><pre>
+                    @date.Day
+                    Num Changes: 0</pre></td>
                 }
                 
             }
